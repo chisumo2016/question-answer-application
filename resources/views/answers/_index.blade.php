@@ -45,7 +45,7 @@
                                         {{--@endif--}}
 
                                         @can('update', $answer)
-                                            <a href="{{ route('questions.answers.edit', [$question->id, $answer->id]) }}" class="btn btn-sm btn-outline-info">Edit</a>
+                                            <a href="{{ route('questions.answers.edit', [$question->id, $answer->id]) }}" class="btn btn-sm btn-outline-info">Edit </a>
                                         @endcan
 
                                         {{--@if(Auth::user()->can('update-question', $question))--}}

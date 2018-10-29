@@ -30,8 +30,12 @@ class Answer extends Model
         static::created(function ($answer){
 
             $answer->question->increment('answers_count');
-            $answer->question->save();
+            //$answer->question->save();
             ///echo "Answer Createad\n";
+        });
+
+        static::deleted(function ($answer){
+            $answer->question->decrement('answers_count');
         });
 
 //        static::saved(function ($answer){
