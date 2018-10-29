@@ -25,7 +25,7 @@
                                 <i class="fas fa-caret-down fas-3x"></i>
                             </a>
 
-                            <a title="Mark this answer as best answer " class="vote-accepted mt-2 ">
+                            <a title="Mark this answer as best answer " class="{{ $answer->status }}mt-2 ">
 
                                 <i class="fas fa-check fas-3x"></i>
 
@@ -51,7 +51,7 @@
                                         {{--@if(Auth::user()->can('update-question', $question))--}}
                                         {{--@endif--}}
 
-                                        @can('delete', $answer->id)
+                                        @can('delete', $answer)
                                             <form action="{{ route('questions.answers.destroy', [$question->id, $answer->id]) }}" method="post" class="form-delete">
                                                 @method('DELETE')
                                                 @csrf
